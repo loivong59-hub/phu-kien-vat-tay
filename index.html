@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WHEY PRO - Thực Phẩm Bổ Sung</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #111;
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ff5a00;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            margin: 0 15px;
+
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff5a00;
+        }
+
+        .cart {
+            background: #ff5a00;
+            padding: 10px 17px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= BANNER ================= */
+
+        .banner {
+
+            height: 480px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.7),
+                    rgba(0,0,0,0.7)
+                ),
+                url("https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            padding-left: 10%;
+
+            color: white;
+        }
+
+        .banner-content {
+            max-width: 650px;
+        }
+
+        .banner h1 {
+
+            font-size: 55px;
+
+            margin-bottom: 20px;
+        }
+
+        .banner h1 span {
+            color: #ff5a00;
+        }
+
+        .banner p {
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            color: #ddd;
+        }
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 14px 28px;
+
+            background: #ff5a00;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #e64f00;
+        }
+
+
+        /* ================= CONTAINER ================= */
+
+        .container {
+
+            width: 85%;
+
+            margin: 60px auto;
+        }
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .title p {
+
+            color: #777;
+
+            font-size: 16px;
+        }
+
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .product {
+
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .product:hover {
+
+            transform:
+                translateY(-8px);
+        }
+
+        .product img {
+
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+        }
+
+        .product-info {
+
+            padding: 20px;
+        }
+
+        .product h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+
+            color: #777;
+
+            line-height: 1.5;
+
+            min-height: 45px;
+        }
+
+        .price {
+
+            color: #ff5a00;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin: 15px 0;
+        }
+
+        .buy {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #111;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            font-weight: bold;
+        }
+
+        .buy:hover {
+
+            background: #ff5a00;
+        }
+
+
+        /* ================= FEATURES ================= */
+
+        .features {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+
+            color: #777;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+
+            background: #111;
+
+            color: white;
+
+            padding: 60px 10%;
+
+            text-align: center;
+        }
+
+        .about h2 {
+
+            font-size: 35px;
+
+            color: #ff5a00;
+
+            margin-bottom: 20px;
+        }
+
+        .about p {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            color: #ccc;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #080808;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px;
+        }
+
+        footer h2 {
+
+            color: #ff5a00;
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+
+            color: #aaa;
+
+            margin: 8px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1000px) {
+
+            .products {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media(max-width: 700px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav {
+
+                text-align: center;
+            }
+
+            nav a {
+
+                margin: 5px;
+            }
+
+            .products {
+
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+
+                grid-template-columns: 1fr;
+            }
+
+            .banner {
+
+                padding: 30px;
+
+            }
+
+            .banner h1 {
+
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        WHEY PRO
+    </div>
+
+
+    <nav>
+
+        <a href="#">
+            Trang chủ
+        </a>
+
+        <a href="#sanpham">
+            Sản phẩm
+        </a>
+
+        <a href="#gioithieu">
+            Giới thiệu
+        </a>
+
+        <a href="#lienhe">
+            Liên hệ
+        </a>
+
+    </nav>
+
+
+    <div class="cart">
+
+        🛒 Giỏ hàng:
+        <span id="cart">
+            0
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= BANNER ================= -->
+
+<section class="banner">
+
+    <div class="banner-content">
+
+        <h1>
+
+            WHEY
+            <span>
+                PROTEIN
+            </span>
+
+            <br>
+
+            CHO NGƯỜI TẬP GYM
+
+        </h1>
+
+
+        <p>
+
+            Bổ sung protein chất lượng cao
+            cho chế độ ăn uống và quá trình
+            tập luyện của bạn.
+
+        </p>
+
+
+        <a
+            href="#sanpham"
+            class="button">
+
+            KHÁM PHÁ SẢN PHẨM
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section
+    class="container"
+    id="sanpham">
+
+
+    <div class="title">
+
+        <h2>
+            Sản phẩm nổi bật
+        </h2>
+
+        <p>
+            Whey Protein và thực phẩm bổ sung
+            dành cho người tập luyện
+        </p>
+
+    </div>
+
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=800&q=80"
+                alt="Whey Protein">
+
+            <div class="product-info">
+
+                <h3>
+                    Whey Protein Chocolate
+                </h3>
+
+                <p class="product-description">
+
+                    Hương chocolate thơm ngon,
+                    dễ pha và phù hợp sử dụng
+                    sau khi tập luyện.
+
+                </p>
+
+                <div class="price">
+
+                    899.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1622484212850-eb596d769edc?auto=format&fit=crop&w=800&q=80"
+                alt="Whey Protein">
+
+            <div class="product-info">
+
+                <h3>
+                    Whey Protein Vanilla
+                </h3>
+
+                <p class="product-description">
+
+                    Vị vanilla dễ uống,
+                    thích hợp bổ sung protein
+                    trong chế độ ăn hàng ngày.
+
+                </p>
+
+                <div class="price">
+
+                    849.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?auto=format&fit=crop&w=800&q=80"
+                alt="Protein">
+
+            <div class="product-info">
+
+                <h3>
+                    Whey Protein Strawberry
+                </h3>
+
+                <p class="product-description">
+
+                    Hương dâu thơm mát,
+                    dễ kết hợp với sữa hoặc nước.
+
+                </p>
+
+                <div class="price">
+
+                    879.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?auto=format&fit=crop&w=800&q=80"
+                alt="Protein">
+
+            <div class="product-info">
+
+                <h3>
+                    Whey Isolate Premium
+                </h3>
+
+                <p class="product-description">
+
+                    Công thức whey isolate
+                    dành cho người muốn bổ sung
+                    protein tinh khiết.
+
+                </p>
+
+                <div class="price">
+
+                    1.199.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=800&q=80"
+                alt="Creatine">
+
+            <div class="product-info">
+
+                <h3>
+                    Creatine Monohydrate
+                </h3>
+
+                <p class="product-description">
+
+                    Sản phẩm bổ sung creatine
+                    dành cho người tập luyện thể thao.
+
+                </p>
+
+                <div class="price">
+
+                    499.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1579722821273-0f6c1c8b0f5c?auto=format&fit=crop&w=800&q=80"
+                alt="Mass Gainer">
+
+            <div class="product-info">
+
+                <h3>
+                    Mass Gainer
+                </h3>
+
+                <p class="product-description">
+
+                    Thức uống bổ sung năng lượng
+                    và protein cho người có nhu cầu
+                    tăng lượng calo.
+
+                </p>
+
+                <div class="price">
+
+                    999.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1556760544-74068565f05c?auto=format&fit=crop&w=800&q=80"
+                alt="BCAA">
+
+            <div class="product-info">
+
+                <h3>
+                    BCAA Amino
+                </h3>
+
+                <p class="product-description">
+
+                    Sản phẩm bổ sung amino acid
+                    dành cho người hoạt động thể thao.
+
+                </p>
+
+                <div class="price">
+
+                    599.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1598971639058-a3e3e3e2eab6?auto=format&fit=crop&w=800&q=80"
+                alt="Protein Combo">
+
+            <div class="product-info">
+
+                <h3>
+                    Combo Protein Gym
+                </h3>
+
+                <p class="product-description">
+
+                    Combo gồm whey protein,
+                    creatine và bình shaker.
+
+                </p>
+
+                <div class="price">
+
+                    1.499.000đ
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="addCart()">
+
+                    🛒 Thêm vào giỏ
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="container">
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🥛
+            </div>
+
+            <h3>
+                Bổ sung Protein
+            </h3>
+
+            <p>
+
+                Hỗ trợ bổ sung protein
+                vào chế độ ăn uống hàng ngày.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h3>
+                Giao hàng toàn quốc
+            </h3>
+
+            <p>
+
+                Đóng gói cẩn thận
+                và hỗ trợ giao hàng toàn quốc.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Sản phẩm đa dạng
+            </h3>
+
+            <p>
+
+                Nhiều lựa chọn whey,
+                creatine và thực phẩm bổ sung.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about"
+    id="gioithieu">
+
+    <h2>
+        VỀ WHEY PRO
+    </h2>
+
+    <p>
+
+        WHEY PRO là cửa hàng chuyên cung cấp
+        các sản phẩm thực phẩm bổ sung dành cho
+        người tập gym và người yêu thích thể thao.
+
+        Chúng tôi hướng đến việc mang đến nhiều
+        lựa chọn sản phẩm protein và thực phẩm
+        bổ sung để khách hàng dễ dàng lựa chọn
+        theo nhu cầu của mình.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="lienhe">
+
+    <h2>
+        WHEY PRO
+    </h2>
+
+    <p>
+        THỰC PHẨM BỔ SUNG & DINH DƯỠNG THỂ THAO
+    </p>
+
+    <p>
+        📞 Hotline: 0900 123 456
+    </p>
+
+    <p>
+        📧 Email: wheypro@gmail.com
+    </p>
+
+    <p>
+        📍 TP. Hồ Chí Minh
+    </p>
+
+    <p>
+        © 2026 WHEY PRO. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    let cart = 0;
+
+
+    function addCart() {
+
+        cart++;
+
+
+        document.getElementById("cart").innerText = cart;
+
+
+        alert(
+            "✅ Đã thêm sản phẩm vào giỏ hàng!"
+        );
+
+    }
+
+</script>
+
+
+</body>
+</html>
