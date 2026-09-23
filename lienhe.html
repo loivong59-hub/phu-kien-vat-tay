@@ -1,28 +1,403 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Liên hệ - WHEY PRO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Liên hệ | WHEY PRO</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: white;
+        }
+
+        header {
+            height: 75px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            border-bottom: 1px solid #292929;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff5a00;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff5a00;
+        }
+
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 50px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ff5a00;
+        }
+
+        .hero p {
+            color: #888;
+        }
+
+
+        .contact {
+            width: 80%;
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+
+        .info {
+            background: #171717;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .info h2 {
+            color: #ff5a00;
+            margin-bottom: 25px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid #292929;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            background: #ff5a00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 21px;
+        }
+
+        .item h3 {
+            margin-bottom: 5px;
+        }
+
+        .item p {
+            color: #888;
+        }
+
+
+        .form {
+            background: #171717;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .form h2 {
+            margin-bottom: 25px;
+        }
+
+        .input {
+            width: 100%;
+            background: #0e0e0e;
+            border: 1px solid #333;
+            padding: 14px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            color: white;
+            outline: none;
+        }
+
+        .input:focus {
+            border-color: #ff5a00;
+        }
+
+        textarea.input {
+            height: 130px;
+            resize: none;
+        }
+
+        .send {
+            width: 100%;
+            background: #ff5a00;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .send:hover {
+            background: #ff741f;
+            transform: translateY(-2px);
+        }
+
+
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+
+        footer span {
+            color: #ff5a00;
+        }
+
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <h1>WHEY PRO</h1>
+
+<header>
+
+    <div class="logo">
+        WHEY PRO
+    </div>
 
     <nav>
-        <a href="index.html">Trang chủ</a>
-        <a href="sanpham.html">Sản phẩm</a>
-        <a href="gioithieu.html">Giới thiệu</a>
-        <a href="lienhe.html">Liên hệ</a>
+
+        <a href="index.html">
+            Trang chủ
+        </a>
+
+        <a href="sanpham.html">
+            Sản phẩm
+        </a>
+
+        <a href="gioithieu.html">
+            Giới thiệu
+        </a>
+
+        <a href="lienhe.html" class="active">
+            Liên hệ
+        </a>
+
     </nav>
 
-    <hr>
+</header>
 
-    <h2>LIÊN HỆ</h2>
 
-    <p>📞 Hotline: 0123 456 789</p>
-    <p>📧 Email: wheypro@gmail.com</p>
-    <p>📍 Địa chỉ: TP. Hồ Chí Minh</p>
+<section class="hero">
+
+    <h1>LIÊN HỆ <span>WHEY PRO</span></h1>
+
+    <p>
+        Bạn cần hỗ trợ? Hãy liên hệ với chúng tôi.
+    </p>
+
+</section>
+
+
+<section class="contact">
+
+
+    <!-- THÔNG TIN -->
+
+    <div class="info">
+
+        <h2>THÔNG TIN LIÊN HỆ</h2>
+
+
+        <div class="item">
+
+            <div class="icon">
+                📞
+            </div>
+
+            <div>
+                <h3>Hotline</h3>
+                <p>0123 456 789</p>
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="icon">
+                📧
+            </div>
+
+            <div>
+                <h3>Email</h3>
+                <p>wheypro@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="icon">
+                📍
+            </div>
+
+            <div>
+                <h3>Địa chỉ</h3>
+                <p>TP. Hồ Chí Minh, Việt Nam</p>
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="icon">
+                🕐
+            </div>
+
+            <div>
+                <h3>Thời gian hỗ trợ</h3>
+                <p>08:00 – 22:00 mỗi ngày</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FORM -->
+
+    <div class="form">
+
+        <h2>GỬI TIN NHẮN</h2>
+
+
+        <input
+            type="text"
+            class="input"
+            placeholder="Họ và tên"
+        >
+
+
+        <input
+            type="email"
+            class="input"
+            placeholder="Email"
+        >
+
+
+        <input
+            type="tel"
+            class="input"
+            placeholder="Số điện thoại"
+        >
+
+
+        <textarea
+            class="input"
+            placeholder="Nội dung tin nhắn..."
+        ></textarea>
+
+
+        <button
+            class="send"
+            onclick="sendMessage()"
+        >
+            GỬI TIN NHẮN
+        </button>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    © 2026 <span>WHEY PRO</span> — Dinh dưỡng thể thao
+
+</footer>
+
+
+<script>
+
+function sendMessage() {
+
+    alert("Cảm ơn bạn! WHEY PRO đã nhận được tin nhắn.");
+
+}
+
+</script>
+
 
 </body>
+
 </html>
